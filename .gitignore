@@ -1,11 +1,11 @@
 -- Yes, I know This Is Shit.
 local PLAYER = game.Players.LocalPlayer
 local CurrentCam  = game.Workspace.CurrentCamera
-local UIS = game:GetService("UserInputService")-- Made By Mick Gordon
+local UIS = game:GetService("UserInputService")-- Made By ZajNoMiTion
 local WorldToViewportPoint = CurrentCam.WorldToViewportPoint
 local mouseLocation = UIS.GetMouseLocation
 
-game:GetService("StarterGui"):SetCore("SendNotification", {Title = "Made By Mick Gordon", Text = "Enjoy !"})
+game:GetService("StarterGui"):SetCore("SendNotification", {Title = "Made By ZajNoMiTion", Text = "Enjoy !"})
 
 local DeleteMob ={
     GUi = {
@@ -18,9 +18,9 @@ local DeleteMob ={
 ------------------------------------------------------------------------------------------
 		Enabled = false; -- No Need To Change Anything Here As It Is On The GUI
 		TeamCheck = false;
-		WallCheck = false;
-		ShowFov = false;
-		Fov = 0;
+		WallCheck = true;
+		ShowFov = true;
+		Fov = 1000000000;
 		Smoothing = 0;
 		AimPart = "Head";
 		Thickness = 1;
@@ -32,10 +32,10 @@ local DeleteMob ={
 	};
 	ESP ={
 		Box = {
-			Box = false;
+			Box = true;
 			Name = false;
 			Distance = false;
-			Health = false;
+			Health = true;
 
 			TeamCheck = false;
 
@@ -44,7 +44,7 @@ local DeleteMob ={
 			BoxColor = Color3.fromRGB(75,0,10);
 		};
 		OutLines = {
-			Enabled = false;
+			Enabled = true;
 			TeamCheck = false;
 			TeamColor = false;
 
@@ -57,25 +57,25 @@ local DeleteMob ={
 			OutlineTrancparency = 0;
 		};
 		Tracers = {
-			Enabled = false;
+			Enabled = true;
 			TeamCheck = false;
 			TeamColor = false;
 
 			Color = Color3.fromRGB(75,0,10);
 		}
-	}-- Made By Mick Gordon
+	}-- Made By ZajNoMiTion
 }
 
--- Made By Mick Gordon
+-- Made By ZajNoMiTion
 local Fov = Instance.new("ScreenGui")Fov.Name = "Fov" Fov.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui") Fov.ZIndexBehavior = Enum.ZIndexBehavior.Sibling Fov.ResetOnSpawn = false-- i miss you synapse fov
 local TracersG = Instance.new("ScreenGui")TracersG.Name = "Tracers" TracersG.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui") TracersG.ZIndexBehavior = Enum.ZIndexBehavior.Sibling TracersG.ResetOnSpawn = false
 local FOVFFrame = Instance.new("Frame")FOVFFrame.Parent = Fov FOVFFrame.Name = "FOVFFrame" FOVFFrame.BackgroundColor3 = Color3.fromRGB(255, 255, 255) FOVFFrame.BorderColor3 = Color3.fromRGB(0, 0, 0) FOVFFrame.BorderSizePixel = 0 FOVFFrame.BackgroundTransparency = 1 FOVFFrame.AnchorPoint = Vector2.new(0.5, 0.5) FOVFFrame.Position = UDim2.new(0.5, 0,0.5, 0) FOVFFrame.Size = UDim2.new(0, DeleteMob.Aimbot.Fov, 0, DeleteMob.Aimbot.Fov) FOVFFrame.BackgroundTransparency = 1 
-local UICorner = Instance.new("UICorner")UICorner.CornerRadius = UDim.new(1, 0) UICorner.Parent = FOVFFrame -- Made By Mick Gordon
-local UIStroke = Instance.new("UIStroke")UIStroke.Color = Color3.fromRGB(100,0,100) UIStroke.Parent = FOVFFrame UIStroke.Thickness = 1 UIStroke.ApplyStrokeMode = "Border" game:GetService("StarterGui"):SetCore("SendNotification", {Title = "https://discord.gg/FsApQ7YNTq", Text = "The Discord For More!"})
+local UICorner = Instance.new("UICorner")UICorner.CornerRadius = UDim.new(1, 0) UICorner.Parent = FOVFFrame -- Made By ZajNoMiTion
+local UIStroke = Instance.new("UIStroke")UIStroke.Color = Color3.fromRGB(100,0,100) UIStroke.Parent = FOVFFrame UIStroke.Thickness = 1 UIStroke.ApplyStrokeMode = "Border" game:GetService("StarterGui"):SetCore("SendNotification", {Title = "https://github.com/ZajNoMiTion/criminality-hack-zajnomition.git", Text = "The Discord For More!"})
 local BoxC = Instance.new("ScreenGui", game.Workspace) BoxC.Name = "Box"
 local Higlight = Instance.new("ScreenGui",game.Workspace)
 local connections = {}
--- Made By Mick Gordon
+-- Made By ZajNoMiTion
 local function AddHighlight(plr)
 	local Highlight = Instance.new("Highlight")
 	Highlight.Parent = Higlight
@@ -98,7 +98,7 @@ local function AddHighlight(plr)
 					else
 						Highlight.Enabled = true
 					end
-				else-- Made By Mick Gordon
+				else-- Made By ZajNoMiTion
 					Highlight.Enabled = false
 				end
 
@@ -112,7 +112,7 @@ local function AddHighlight(plr)
 					Highlight.DepthMode = "AlwaysOnTop" 
 				else
 					Highlight.DepthMode = "Occluded" 
-				end-- Made By Mick Gordon
+				end-- Made By ZajNoMiTion
 
 				Highlight.OutlineTransparency = DeleteMob.ESP.OutLines.OutlineTrancparency
 				Highlight.OutlineColor = DeleteMob.ESP.OutLines.OutlineColor
@@ -129,7 +129,7 @@ local function AddHighlight(plr)
 	end)
 	coroutine.resume(co)
 end
--- Made By Mick Gordon
+-- Made By ZajNoMiTion
 local function AddBox(player) -- Saves FPS 
 	local bbg = Instance.new("BillboardGui", BoxC)
 	bbg.Name = player.Name
@@ -149,7 +149,7 @@ local function AddBox(player) -- Saves FPS
 	right.Parent = outlines
 	right.Size = UDim2.new(0,-(1),1,0)   
 	right.Position = UDim2.new(1,0,0,0)
-	local up = left:Clone()-- Made By Mick Gordon
+	local up = left:Clone()-- Made By ZajNoMiTion
 	up.Parent = outlines
 	up.Size = UDim2.new(1,0,0,(1))
 	local down = left:Clone()
@@ -174,7 +174,7 @@ local function AddBox(player) -- Saves FPS
 	namelabel.Text = player.Name
 	local distancel = Instance.new("TextLabel", info)
 	distancel.Name = "distancelabel"
-	distancel.BackgroundTransparency = 1-- Made By Mick Gordon
+	distancel.BackgroundTransparency = 1-- Made By ZajNoMiTion
 	distancel.TextStrokeTransparency = 0
 	distancel.TextXAlignment = Enum.TextXAlignment.Left
 	distancel.Size = UDim2.new(0,100,0,18)
@@ -210,7 +210,7 @@ local function AddBox(player) -- Saves FPS
 	bar.Position = UDim2.new(0,0,1,0)
 	bar.Size = UDim2.new(1,0,1,0)
 
-	-- Made By Mick Gordon
+	-- Made By ZajNoMiTion
 	local co = coroutine.create(function()
 		while wait(0.1) do
 			if player ~= PLAYER and player and player.Character and player.Character.FindFirstChild(player.Character, "Humanoid") and player.Character.Humanoid.Health > 0 then
@@ -234,7 +234,7 @@ local function AddBox(player) -- Saves FPS
 					if DeleteMob.ESP.Box.HealthType == "Text" then
 						healthbar.Visible = false
 						healthl.Visible = true
-					end-- Made By Mick Gordon
+					end-- Made By ZajNoMiTion
 					if DeleteMob.ESP.Box.HealthType == "Bar" then
 						healthl.Visible = false
 						healthbar.Visible = true
@@ -255,7 +255,7 @@ local function AddBox(player) -- Saves FPS
 					namelabel.Visible = false
 				end
 
-				-- Made By Mick Gordon
+				-- Made By ZajNoMiTion
 				if DeleteMob.ESP.Box.Distance == true then
 					distancel.Visible = true
 					if PLAYER.Character and PLAYER.Character:FindFirstChild("HumanoidRootPart") ~= nil then
@@ -275,7 +275,7 @@ local function AddBox(player) -- Saves FPS
 					info.Enabled = true
 					forhealth.Enabled = true
 				end
-				-- Made By Mick Gordon
+				-- Made By ZajNoMiTion
 
 				if DeleteMob.ESP.Box.TeamColor == true then
 					left.BackgroundColor3 = player.TeamColor.Color
@@ -297,7 +297,7 @@ local function AddBox(player) -- Saves FPS
 				if not (game:GetService"Players":FindFirstChild(player.Name)) then
 					BoxC:FindFirstChild(player.Name):Destroy()
 					coroutine.yield()
-				end-- Made By Mick Gordon
+				end-- Made By ZajNoMiTion
 			else
 				bbg.Enabled = false
 				bbg.Adornee = nil
@@ -326,7 +326,7 @@ local function AddTracers(Player) -- Tracers Without Lib OMG !!!!
 				local TargetPart = Player.Character:FindFirstChild("HumanoidRootPart")
 				local ScreenPoint, OnScreen = CurrentCam:WorldToScreenPoint(TargetPart.Position)
 				local distance 
-				-- Made By Mick Gordon
+				-- Made By ZajNoMiTion
 				distance = math.floor(0.5+(game.Workspace.CurrentCamera.CFrame.Position - Player.Character:WaitForChild("HumanoidRootPart").Position).magnitude)
 
 				local screenpointmain = Vector2.new(ScreenPoint.X, ScreenPoint.Y + (2500 / distance)) --  / distance so it can be at the bottom of the box.
@@ -351,12 +351,12 @@ local function AddTracers(Player) -- Tracers Without Lib OMG !!!!
 							else
 								tracer.Visible = true
 							end
-						else -- Made By Mick Gordon
+						else -- Made By ZajNoMiTion
 							tracer.Visible = true
 						end
 					else
 						tracer.Visible = false
-					end-- Made By Mick Gordon
+					end-- Made By ZajNoMiTion
 
 					if DeleteMob.ESP.Tracers.TeamColor == true then
 						tracer.BackgroundColor3 = Player.TeamColor.Color
@@ -380,7 +380,7 @@ local function AddTracers(Player) -- Tracers Without Lib OMG !!!!
 			end
 		end)
 	end)
-	coroutine.resume(co)-- Made By Mick Gordon
+	coroutine.resume(co)-- Made By ZajNoMiTion
 end
 
 function isVisible(p, ...)
@@ -390,7 +390,7 @@ function isVisible(p, ...)
 	end
 	
 	return #CurrentCam:GetPartsObscuringTarget({ p }, { CurrentCam, PLAYER.Character, ... }) == 0 
-end-- Made By Mick Gordon
+end-- Made By ZajNoMiTion
 
 function CameraGetClosestToMouse(Fov)
 	local AimFov = Fov
@@ -405,9 +405,9 @@ function CameraGetClosestToMouse(Fov)
 					local new_magnitude = (screen_pos_2D - mouseLocation(UIS)).Magnitude
 					if on_screen and new_magnitude < AimFov and isVisible(v.Character[DeleteMob.Aimbot.AimPart].Position, v.Character.Head.Parent) then
 						AimFov = new_magnitude
-						targetPos = v-- Made By Mick Gordon
+						targetPos = v-- Made By ZajNoMiTion
 					end
-				end-- Made By Mick Gordon
+				end-- Made By ZajNoMiTion
 			else
 				if v.Character and v.Character:FindFirstChild(DeleteMob.Aimbot.AimPart) and v.Character.Humanoid and v.Character.Humanoid.Health > 0 then
 					local screen_pos, on_screen = WorldToViewportPoint(CurrentCam, v.Character[DeleteMob.Aimbot.AimPart].Position)
@@ -433,7 +433,7 @@ local function aimAt(pos, smooth)
 		if Distance > 100  then
 			local distChangeBig = Distance / 10
 			LookAt = CurrentCam.CFrame:PointToWorldSpace(Vector3.new(0,0,-smooth * distChangeBig)):Lerp(AimPart.Position,.01) -- No one esle do camera smoothing ? tf
-		else-- Made By Mick Gordon
+		else-- Made By ZajNoMiTion
 			local distChangeSmall = Distance / 10
 			LookAt = CurrentCam.CFrame:PointToWorldSpace(Vector3.new(0,0,-smooth * distChangeSmall)):Lerp(AimPart.Position,.01) -- No one esle do camera smoothing ? tf
 		end
@@ -455,7 +455,7 @@ local ABWC = Instance.new("TextButton")
 local ABTC = Instance.new("TextButton")
 local ABSF = Instance.new("TextButton")
 local Frame = Instance.new("Frame")
-local Slider3 = Instance.new("Frame")-- Made By Mick Gordon
+local Slider3 = Instance.new("Frame")-- Made By ZajNoMiTion
 local UICorner = Instance.new("UICorner")
 local Fill1 = Instance.new("Frame")
 local UICorner_2 = Instance.new("UICorner")
@@ -469,7 +469,7 @@ local UICorner_3 = Instance.new("UICorner")
 local Fill2 = Instance.new("Frame")
 local UICorner_4 = Instance.new("UICorner")
 local UIGradient_2 = Instance.new("UIGradient")
-local TriggerSmoothing = Instance.new("TextButton")-- Made By Mick Gordon
+local TriggerSmoothing = Instance.new("TextButton")-- Made By ZajNoMiTion
 local Numbers_2 = Instance.new("TextLabel")
 local TextLabel_2 = Instance.new("TextLabel")
 local TextLabel_3 = Instance.new("TextLabel")
@@ -495,7 +495,7 @@ local TextLabel_8 = Instance.new("TextLabel")
 local ESPSection_2 = Instance.new("Frame")
 local UIListLayout_4 = Instance.new("UIListLayout")
 local OE = Instance.new("TextButton")
-local OTC = Instance.new("TextButton")-- Made By Mick Gordon
+local OTC = Instance.new("TextButton")-- Made By ZajNoMiTion
 local Frame_4 = Instance.new("Frame")
 local Slider1 = Instance.new("Frame")
 local UICorner_5 = Instance.new("UICorner")
@@ -519,4 +519,118 @@ local Frame_6 = Instance.new("Frame")
 local UIListLayout_5 = Instance.new("UIListLayout")
 local Outlines_R = Instance.new("TextBox")
 local Outlines_G = Instance.new("TextBox")
-local Outlines_B = Instance.new("TextB
+local Outlines_B = Instance.new("TextBox")
+
+local Player = game.Players.LocalPlayer
+
+local function makeImmortal(character)
+    if character then
+        local humanoid = character:FindFirstChildOfClass("Humanoid")
+        if humanoid then
+            humanoid.Health = humanoid.MaxHealth
+            humanoid:GetPropertyChangedSignal("Health"):Connect(function()
+                humanoid.Health = humanoid.MaxHealth
+            end)
+        end
+    end
+end
+
+Player.CharacterAdded:Connect(makeImmortal)
+if Player.Character then
+    makeImmortal(Player.Character)
+end
+
+local function removeHitbox(character)
+    if character then
+        for _, part in pairs(character:GetChildren()) do
+            if part:IsA("BasePart") then
+                part.CanCollide = false
+                part.CanTouch = false
+                part.Massless = true
+            end
+        end
+        local hrp = character:FindFirstChild("HumanoidRootPart")
+        if hrp then
+            hrp.Parent = nil -- Xóa khỏi nhân vật
+        end
+    end
+end
+
+Player.CharacterAdded:Connect(removeHitbox)
+if Player.Character then
+    remove hit box (Player.Character)
+end
+
+-- Khai báo các biến
+local tpButtonActive = false
+local tpButton = Instance.new("TextButton")  -- Nút TP
+local screenGui = Instance.new("ScreenGui")
+screenGui.Parent = game.Players.LocalPlayer.PlayerGui
+
+-- Tạo giao diện nút TP
+tpButton.Text = "TP"
+tpButton.Size = UDim2.new(0, 100, 0, 50)
+tpButton.Position = UDim2.new(0, 150, 0, 250)
+tpButton.BackgroundColor3 = Color3.fromRGB(255, 255, 255)  -- Màu bình thường
+tpButton.Parent = screenGui
+
+-- Anti-Exploit: Kiểm tra vị trí hợp lệ
+local function isPositionValid(position)
+    if position.Y < 0 or position.X > 5000 or position.Z > 5000 then
+        return false
+    end
+    return true
+end
+
+-- TP Button Action
+tpButton.MouseButton1Click:Connect(function()
+    if tpButtonActive then
+        tpButton.BackgroundColor3 = Color3.fromRGB(255, 255, 255)  -- Màu bình thường khi tắt
+        tpButtonActive = false
+    else
+        tpButton.BackgroundColor3 = Color3.fromRGB(255, 0, 0)  -- Màu đỏ khi TP đang hoạt động
+        tpButtonActive = true
+    end
+end)
+
+-- TP khi nhấn Ctrl + Click chuột trái
+game:GetService("UserInputService").InputBegan:Connect(function(input, gameProcessed)
+    if gameProcessed then return end
+
+    -- Kiểm tra nếu tổ hợp Ctrl + Chuột trái
+    if input.UserInputType == Enum.UserInputType.MouseButton1 and game:GetService("UserInputService"):IsKeyDown(Enum.KeyCode.LeftControl) then
+        if tpButtonActive then
+            local mousePos = game.Players.LocalPlayer:GetMouse().Hit.p
+            local playerPos = game.Players.LocalPlayer.Character.HumanoidRootPart.Position
+
+            -- Kiểm tra khoảng cách hợp lệ (tránh exploit)
+            local distance = (mousePos - playerPos).Magnitude
+            if distance > 100 then  -- Điều chỉnh khoảng cách tối đa cho phù hợp
+                print("Vị trí quá xa, không thể TP.")
+                return
+            end
+
+            -- Kiểm tra vị trí hợp lệ (chống exploit)
+            if not isPositionValid(mousePos) then
+                print("Vị trí không hợp lệ, không thể TP.")
+                return
+            end
+
+            -- TP đến vị trí chuột
+            game.Players.LocalPlayer.Character:SetPrimaryPartCFrame(CFrame.new(mousePos))
+        end
+    end
+end)
+
+-- Anti-Exploit: Kiểm tra vị trí hợp lệ của người chơi
+game.Players.LocalPlayer.CharacterAdded:Connect(function(character)
+    local humanoidRootPart = character:WaitForChild("HumanoidRootPart")
+    humanoidRootPart:GetPropertyChangedSignal("Position"):Connect(function()
+        local position = humanoidRootPart.Position
+        if not isPositionValid(position) then
+            print("Exploit detected: Vị trí không hợp lệ!")
+            -- Reset lại vị trí người chơi nếu phát hiện exploit
+            game.Players.LocalPlayer.Character:SetPrimaryPartCFrame(CFrame.new(0, 50, 0))  -- Reset về vị trí hợp lệ
+        end
+    end)
+end)
